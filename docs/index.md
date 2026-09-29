@@ -1,6 +1,4 @@
-# Protocolos de Janela Deslizante
-
-Agenda:
+# Agenda
 
 - [1. Introdução](pagina-01.md)
 - [2. Por que precisamos de uma janela?](pagina-02.md)
