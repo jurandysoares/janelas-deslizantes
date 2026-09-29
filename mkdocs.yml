@@ -1,0 +1,10 @@
+site_name: Protocolos de Janela Deslizante
+site_author: Jurandy Soares
+
+theme:
+    name: material
+    language: pt
+
+plugins:
+    - search
+    - mermaid2
