@@ -1,4 +1,4 @@
-# 14. Comparação
+# Comparação
 
 | Característica | Stop-and-Wait | Go-Back-N | Repetição Seletiva |
 | --- | --- | --- | --- |

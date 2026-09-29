@@ -1,14 +1,14 @@
-# 16. Exercício de aplicação
+# Exercício de aplicação
 
 Considere:
 
 ```text
-0 ✓
-1 ✓
-2 ✗
-3 ✓
-4 ✓
-5 ✓
+0: OK
+1: OK
+2: PERDA
+3: OK
+4: OK
+5: OK
 ```
 
 Responda:

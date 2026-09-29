@@ -1,4 +1,4 @@
-# 4. Números de sequência
+# Números de sequência
 
 As unidades podem receber números de sequência como:
 

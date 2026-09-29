@@ -1,19 +1,19 @@
-# 8. Go-Back-N × Repetição Seletiva
+# Go-Back-N × Repetição Seletiva
 
 Considere:
 
 ```text
-0 ✓
-1 ✓
-2 ✗
-3 ✓
-4 ✓
+0: OK
+1: OK
+2: PERDA
+3: OK
+4: OK
 ```
 
 No **Go-Back-N**, a perda pode levar à retransmissão de:
 
 ```text
-2 → 3 → 4
+2 => 3 => 4
 ```
 
 Na **Repetição Seletiva**, a recuperação pode ser:

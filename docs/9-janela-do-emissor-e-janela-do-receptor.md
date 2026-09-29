@@ -1,4 +1,4 @@
-# 9. Janela do emissor e janela do receptor
+# Janela do emissor e janela do receptor
 
 Uma janela deslizante envolve estado tanto no emissor quanto no receptor.
 

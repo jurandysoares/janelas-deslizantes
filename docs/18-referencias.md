@@ -1,4 +1,4 @@
-# 18. Referências
+# Referências
 
 - **INTERNET ENGINEERING TASK FORCE (IETF).** *RFC 5681*: TCP Congestion Control. Authored by M. Allman, V. Paxson, E. Blanton. RFC Editor, 2009. Disponível em: [https://www.rfc-editor.org/info/rfc5681](https://www.rfc-editor.org/info/rfc5681). Acesso em: 28 set. 2026.
 - **INTERNET ENGINEERING TASK FORCE (IETF).** *RFC 9293*: Transmission Control Protocol (TCP). Edited by W. Eddy. RFC Editor, 2022. Disponível em: [https://www.rfc-editor.org/info/rfc9293](https://www.rfc-editor.org/info/rfc9293). Acesso em: 28 set. 2026.

@@ -1,4 +1,4 @@
-# 13. Relação com o TCP
+# Relação com o TCP
 
 O estudo de Stop-and-Wait, Go-Back-N e Repetição Seletiva fornece uma base conceitual para compreender números de sequência, ACKs, retransmissões, temporizadores e janelas.
 

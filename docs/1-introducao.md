@@ -1,4 +1,4 @@
-# 1. Introdução
+# Introdução
 
 Protocolos de **janela deslizante** permitem que um emissor mantenha várias unidades de dados em trânsito antes de receber todas as confirmações correspondentes. A técnica evita que o transmissor permaneça ocioso aguardando uma confirmação após cada transmissão e constitui uma ideia fundamental para compreender confiabilidade, retransmissão e controle de fluxo em redes de computadores.
 

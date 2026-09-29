@@ -1,4 +1,4 @@
-# 17. Síntese
+# Síntese
 
 A ideia fundamental da janela deslizante é permitir que **várias unidades de dados permaneçam em trânsito simultaneamente**, em vez de interromper a transmissão depois de cada unidade.
 
@@ -10,7 +10,7 @@ A **Repetição Seletiva** permite uma recuperação mais seletiva: unidades rec
 
 ```mermaid
 flowchart LR
-    A["Stop-and-Wait<br/>enviar → esperar"] --> B["Janela deslizante<br/>várias unidades em trânsito"]
+    A["Stop-and-Wait<br/>enviar => esperar"] --> B["Janela deslizante<br/>várias unidades em trânsito"]
     B --> C["Go-Back-N<br/>recuperação em bloco"]
     B --> D["Repetição Seletiva<br/>recuperação seletiva"]
 ```

@@ -1,6 +1,6 @@
-# 3. Stop-and-Wait
+# Stop-and-Wait
 
-## 3.1 Funcionamento
+## Funcionamento
 
 No **Stop-and-Wait**, o emissor transmite uma unidade de dados e aguarda sua confirmação antes de transmitir a próxima.
 
@@ -18,7 +18,7 @@ sequenceDiagram
 
 Existe, portanto, no máximo uma unidade não confirmada.
 
-## 3.2 Perda de dados
+## Perda de dados
 
 Se um quadro for perdido, o emissor precisa de um mecanismo para detectar que a confirmação não chegou. Normalmente, isso envolve um **temporizador** e uma retransmissão após o timeout.
 
@@ -33,7 +33,7 @@ sequenceDiagram
     R-->>E: ACK 0
 ```
 
-## 3.3 ACK perdido e duplicatas
+## ACK perdido e duplicatas
 
 O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O emissor então retransmite o mesmo quadro. O receptor precisa reconhecer que se trata de uma duplicata.
 

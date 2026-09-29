@@ -1,22 +1,22 @@
-# 7. Repetição Seletiva
+# Repetição Seletiva
 
-## 7.1 Motivação
+## Motivação
 
 No cenário:
 
 ```text
-0 ✓
-1 ✓
-2 ✗
-3 ✓
-4 ✓
+0: OK
+1: OK
+2: PERDA
+3: OK
+4: OK
 ```
 
 o receptor já possui 3 e 4. Retransmiti-los seria desnecessário se o protocolo conseguir armazená-los enquanto aguarda o quadro 2.
 
 A **Repetição Seletiva** procura retransmitir somente as unidades que precisam de recuperação.
 
-## 7.2 Exemplo
+## Exemplo
 
 ```mermaid
 sequenceDiagram
