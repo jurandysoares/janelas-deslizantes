@@ -1,6 +1,6 @@
 # Por que precisamos de uma janela?
 
-No mecanismo mais simples, o emissor faz:
+No mecanismo mais simples, o transmissor faz:
 
 ```text
 enviar => esperar ACK => enviar => esperar ACK => ...

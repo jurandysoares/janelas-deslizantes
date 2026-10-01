@@ -62,7 +62,7 @@ nav = [
   "6-go-back-n.md",
   "7-repeticao-seletiva.md",
   "8-go-back-n-x-repeticao-seletiva.md",
-  "9-janela-do-emissor-e-janela-do-receptor.md",
+  "9-janela-do-transmissor-e-janela-do-receptor.md",
   "10-relacao-com-eficiencia-do-enlace.md",
   "11-relacao-com-controle-de-fluxo.md",
   "12-relacao-com-controle-de-congestionamento.md",

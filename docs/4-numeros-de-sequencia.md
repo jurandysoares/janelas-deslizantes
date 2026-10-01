@@ -11,7 +11,7 @@ O número de sequência permite identificar a unidade e ajuda o receptor a recon
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R --x E: ACK 0

@@ -27,8 +27,8 @@ flowchart TB
     A["Quadro 2 perdido"]
     A --> B["Go-Back-N"]
     A --> C["Repetição Seletiva"]
-    B --> D["Retransmite 2 e unidades</br> posteriores necessárias"]
-    C --> E["Retransmite somente 2"]
+    B --> D["Reenvia 2 e unidades</br> posteriores necessárias"]
+    C --> E["Reenvia somente 2"]
 ```
 
 A vantagem da repetição seletiva é evitar retransmissões desnecessárias. Em contrapartida, ela exige mecanismos mais sofisticados para armazenar e administrar dados recebidos fora de ordem.

@@ -1,6 +1,6 @@
 # Relação com controle de congestionamento
 
-No TCP existe outra limitação importante: a rede pode não suportar uma quantidade arbitrariamente grande de dados em trânsito. O controle de congestionamento utiliza **`cwnd`** para limitar a quantidade de dados que o emissor coloca na rede em função das condições de congestionamento.
+No TCP existe outra limitação importante: a rede pode não suportar uma quantidade arbitrariamente grande de dados em trânsito. O controle de congestionamento utiliza **`cwnd`** para limitar a quantidade de dados que o transmissor coloca na rede em função das condições de congestionamento.
 
 Uma visão conceitual simplificada é:
 
@@ -9,7 +9,7 @@ flowchart TB
     A["Quantidade de dados em trânsito"]
     B["rwnd<br/>controle de fluxo"]
     C["cwnd<br/>controle de congestionamento"]
-    D["Limite efetivo do emissor"]
+    D["Limite efetivo do transmissor"]
     B --> D
     C --> D
     D --> A

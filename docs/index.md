@@ -8,7 +8,7 @@
 - [6. Go-Back-N](6-go-back-n.md)
 - [7. Repetição Seletiva](7-repeticao-seletiva.md)
 - [8. Go-Back-N × Repetição Seletiva](8-go-back-n-x-repeticao-seletiva.md)
-- [9. Janela do emissor e janela do receptor](9-janela-do-emissor-e-janela-do-receptor.md)
+- [9. Janela do transmissor e janela do receptor](9-janela-do-transmissor-e-janela-do-receptor.md)
 - [10. Relação com eficiência do enlace](10-relacao-com-eficiencia-do-enlace.md)
 - [11. Relação com controle de fluxo](11-relacao-com-controle-de-fluxo.md)
 - [12. Relação com controle de congestionamento](12-relacao-com-controle-de-congestionamento.md)

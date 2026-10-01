@@ -2,13 +2,13 @@
 
 ## 1. Introdução
 
-Protocolos de **janela deslizante** permitem que um emissor mantenha várias unidades de dados em trânsito antes de receber todas as confirmações correspondentes. A técnica evita que o transmissor permaneça ocioso aguardando uma confirmação após cada transmissão e constitui uma ideia fundamental para compreender confiabilidade, retransmissão e controle de fluxo em redes de computadores.
+Protocolos de **janela deslizante** permitem que um transmissor mantenha várias unidades de dados em trânsito antes de receber todas as confirmações correspondentes. A técnica evita que o transmissor permaneça ocioso aguardando uma confirmação após cada transmissão e constitui uma ideia fundamental para compreender confiabilidade, retransmissão e controle de fluxo em redes de computadores.
 
 Neste material, a evolução será apresentada em três etapas:
 
-1. **Stop-and-Wait** — transmite uma unidade e espera sua confirmação;
+1. **Stop-and-Wait** — envia uma unidade e espera sua confirmação;
 2. **Go-Back-N (GBN)** — permite várias unidades pendentes, mas uma perda pode provocar a retransmissão da unidade perdida e das posteriores;
-3. **Repetição Seletiva (Selective Repeat, SR)** — permite várias unidades pendentes e retransmite somente as unidades que precisam ser recuperadas.
+3. **Repetição Seletiva (Selective Repeat, SR)** — permite várias unidades pendentes e reenvia somente as unidades que precisam ser recuperadas.
 
 ```mermaid
 flowchart LR
@@ -21,7 +21,7 @@ flowchart LR
 
 # 2. Por que precisamos de uma janela?
 
-No mecanismo mais simples, o emissor faz:
+No mecanismo mais simples, o transmissor faz:
 
 ```text
 enviar => esperar ACK => enviar => esperar ACK => ...
@@ -62,12 +62,12 @@ Depois que 0 e 1 são confirmados, a janela avança:
 
 ## 3.1 Funcionamento
 
-No **Stop-and-Wait**, o emissor transmite uma unidade de dados e aguarda sua confirmação antes de transmitir a próxima.
+No **Stop-and-Wait**, o transmissor envia uma unidade de dados e aguarda sua confirmação antes de transmitir a próxima.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R-->>E: ACK 0
@@ -81,12 +81,12 @@ Existe, portanto, no máximo uma unidade não confirmada.
 
 ## 3.2 Perda de dados
 
-Se um quadro for perdido, o emissor precisa de um mecanismo para detectar que a confirmação não chegou. Normalmente, isso envolve um **temporizador** e uma retransmissão após o timeout.
+Se um quadro for perdido, o transmissor precisa de um mecanismo para detectar que a confirmação não chegou. Normalmente, isso envolve um **temporizador** e uma retransmissão após o timeout.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E -x R: Quadro 0
     Note over E,R: Quadro perdido
@@ -97,12 +97,12 @@ sequenceDiagram
 
 ## 3.3 ACK perdido e duplicatas
 
-O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O emissor então retransmite o mesmo quadro. O receptor precisa reconhecer que se trata de uma duplicata.
+O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O transmissor então reenvia o mesmo quadro. O receptor precisa reconhecer que se trata de uma duplicata.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R --x E: ACK 0
@@ -128,7 +128,7 @@ O número de sequência permite identificar a unidade e ajuda o receptor a recon
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R --x E: ACK 0
@@ -140,7 +140,7 @@ sequenceDiagram
 
 # 5. Da espera à janela deslizante
 
-A janela generaliza o Stop-and-Wait: em vez de permitir somente uma unidade não confirmada, o emissor pode manter várias.
+A janela generaliza o Stop-and-Wait: em vez de permitir somente uma unidade não confirmada, o transmissor pode manter várias.
 
 ```text
 Antes:
@@ -163,7 +163,7 @@ A janela contém, conceitualmente, os números de sequência que estão dentro d
 
 ## 6.1 Ideia geral
 
-No **Go-Back-N (GBN)**, o emissor pode enviar várias unidades antes de receber confirmações. Quando ocorre uma perda, a recuperação volta ao ponto da falha e retransmite a unidade perdida e as unidades posteriores que precisam ser recuperadas.
+No **Go-Back-N (GBN)**, o transmissor pode enviar várias unidades antes de receber confirmações. Quando ocorre uma perda, a recuperação volta ao ponto da falha e reenvia a unidade perdida e as unidades posteriores que precisam ser recuperadas.
 
 Considere:
 
@@ -182,7 +182,7 @@ Se o quadro 2 for perdido, o receptor não dispõe do quadro esperado para conti
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R-->>E: ACK 0
@@ -235,7 +235,7 @@ A **Repetição Seletiva** procura retransmitir somente as unidades que precisam
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R-->>E: ACK 0
@@ -285,17 +285,17 @@ flowchart TB
     A["Quadro 2 perdido"]
     A --> B["Go-Back-N"]
     A --> C["Repetição Seletiva"]
-    B --> D["Retransmite 2 e unidades posteriores necessárias"]
-    C --> E["Retransmite somente 2"]
+    B --> D["Reenvia 2 e unidades posteriores necessárias"]
+    C --> E["Reenvia somente 2"]
 ```
 
 A vantagem da repetição seletiva é evitar retransmissões desnecessárias. Em contrapartida, ela exige mecanismos mais sofisticados para armazenar e administrar dados recebidos fora de ordem.
 
-# 9. Janela do emissor e janela do receptor
+# 9. Janela do transmissor e janela do receptor
 
-Uma janela deslizante envolve estado tanto no emissor quanto no receptor.
+Uma janela deslizante envolve estado tanto no transmissor quanto no receptor.
 
-O emissor precisa saber quais dados:
+O transmissor precisa saber quais dados:
 
 - já foram confirmados;
 - foram enviados, mas ainda aguardam confirmação;
@@ -309,7 +309,7 @@ O receptor precisa saber quais dados:
 
 ```mermaid
 flowchart LR
-    E["Emissor"] --> W["Janela de transmissão"]
+    E["Transmissor"] --> W["Janela de transmissão"]
     W -->|dados| R["Receptor"]
     R --> B["Janela / estado de recepção"]
     B -->|ACKs| E
@@ -342,19 +342,19 @@ A segunda estratégia permite sobrepor transmissão e espera por confirmações,
 
 # 11. Relação com controle de fluxo
 
-A ideia de janela também aparece no **controle de fluxo**. O receptor pode limitar a quantidade de dados que o emissor mantém em trânsito para evitar que seus buffers sejam excedidos.
+A ideia de janela também aparece no **controle de fluxo**. O receptor pode limitar a quantidade de dados que o transmissor mantém em trânsito para evitar que seus buffers sejam excedidos.
 
 ```mermaid
 flowchart LR
     R["Receptor"] -->|"capacidade disponível"| W["Janela anunciada"]
-    W --> E["Emissor"]
+    W --> E["Transmissor"]
 ```
 
 No TCP, a janela de recepção é representada conceitualmente por **`rwnd`**. Ela expressa uma limitação associada à capacidade do receptor.
 
 # 12. Relação com controle de congestionamento
 
-No TCP existe outra limitação importante: a rede pode não suportar uma quantidade arbitrariamente grande de dados em trânsito. O controle de congestionamento utiliza **`cwnd`** para limitar a quantidade de dados que o emissor coloca na rede em função das condições de congestionamento.
+No TCP existe outra limitação importante: a rede pode não suportar uma quantidade arbitrariamente grande de dados em trânsito. O controle de congestionamento utiliza **`cwnd`** para limitar a quantidade de dados que o transmissor coloca na rede em função das condições de congestionamento.
 
 Uma visão conceitual simplificada é:
 
@@ -363,7 +363,7 @@ flowchart TB
     A["Quantidade de dados em trânsito"]
     B["rwnd<br/>controle de fluxo"]
     C["cwnd<br/>controle de congestionamento"]
-    D["Limite efetivo do emissor"]
+    D["Limite efetivo do transmissor"]
     B --> D
     C --> D
     D --> A
@@ -464,7 +464,7 @@ Responda:
 
 A ideia fundamental da janela deslizante é permitir que **várias unidades de dados permaneçam em trânsito simultaneamente**, em vez de interromper a transmissão depois de cada unidade.
 
-O **Stop-and-Wait** representa o caso mais simples: uma unidade é transmitida e o emissor aguarda sua confirmação.
+O **Stop-and-Wait** representa o caso mais simples: uma unidade é transmitida e o transmissor aguarda sua confirmação.
 
 O **Go-Back-N** amplia o paralelismo, mas pode precisar retransmitir a unidade perdida e unidades posteriores.
 

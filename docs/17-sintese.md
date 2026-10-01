@@ -2,7 +2,7 @@
 
 A ideia fundamental da janela deslizante é permitir que **várias unidades de dados permaneçam em trânsito simultaneamente**, em vez de interromper a transmissão depois de cada unidade.
 
-O **Stop-and-Wait** representa o caso mais simples: uma unidade é transmitida e o emissor aguarda sua confirmação.
+O **Stop-and-Wait** representa o caso mais simples: uma unidade é transmitida e o transmissor aguarda sua confirmação.
 
 O **Go-Back-N** amplia o paralelismo, mas pode precisar retransmitir a unidade perdida e unidades posteriores.
 

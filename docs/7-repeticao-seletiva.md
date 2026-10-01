@@ -21,7 +21,7 @@ A **Repetição Seletiva** procura retransmitir somente as unidades que precisam
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R-->>E: ACK 0

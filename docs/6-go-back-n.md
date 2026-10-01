@@ -2,7 +2,7 @@
 
 ## Ideia geral
 
-No **Go-Back-N (GBN)**, o emissor pode enviar várias unidades antes de receber confirmações. Quando ocorre uma perda, a recuperação volta ao ponto da falha e retransmite a unidade perdida e as unidades posteriores que precisam ser recuperadas.
+No **Go-Back-N (GBN)**, o transmissor pode enviar várias unidades antes de receber confirmações. Quando ocorre uma perda, a recuperação volta ao ponto da falha e reenvia a unidade perdida e as unidades posteriores que precisam ser recuperadas.
 
 Considere:
 
@@ -21,7 +21,7 @@ Se o quadro 2 for perdido, o receptor não dispõe do quadro esperado para conti
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R-->>E: ACK 0

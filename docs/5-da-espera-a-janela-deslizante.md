@@ -1,6 +1,6 @@
 # Da espera à janela deslizante
 
-A janela generaliza o Stop-and-Wait: em vez de permitir somente uma unidade não confirmada, o emissor pode manter várias.
+A janela generaliza o Stop-and-Wait: em vez de permitir somente uma unidade não confirmada, o transmissor pode manter várias.
 
 ```text
 Antes:

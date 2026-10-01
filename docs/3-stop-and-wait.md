@@ -2,12 +2,12 @@
 
 ## Funcionamento
 
-No **Stop-and-Wait**, o emissor transmite uma unidade de dados e aguarda sua confirmação antes de transmitir a próxima.
+No **Stop-and-Wait**, o transmissor envia uma unidade de dados e aguarda sua confirmação antes de transmitir a próxima.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R-->>E: ACK 0
@@ -21,12 +21,12 @@ Existe, portanto, no máximo uma unidade não confirmada.
 
 ## Perda de dados
 
-Se um quadro for perdido, o emissor precisa de um mecanismo para detectar que a confirmação não chegou. Normalmente, isso envolve um **temporizador** e uma retransmissão após o timeout.
+Se um quadro for perdido, o transmissor precisa de um mecanismo para detectar que a confirmação não chegou. Normalmente, isso envolve um **temporizador** e uma retransmissão após o timeout.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E -x R: Quadro 0
     Note over E,R: Quadro perdido
@@ -37,12 +37,12 @@ sequenceDiagram
 
 ## ACK perdido e duplicatas
 
-O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O emissor então retransmite o mesmo quadro. O receptor precisa reconhecer que se trata de uma duplicata.
+O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O transmissor então reenvia o mesmo quadro. O receptor precisa reconhecer que se trata de uma duplicata.
 
 ```mermaid
 sequenceDiagram
     autonumber
-    participant E as Emissor
+    participant E as Transmissor
     participant R as Receptor
     E->>R: Quadro 0
     R --x E: ACK 0
