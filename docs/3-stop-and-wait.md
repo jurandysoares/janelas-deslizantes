@@ -25,6 +25,7 @@ Se um quadro for perdido, o emissor precisa de um mecanismo para detectar que a 
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E -x R: Quadro 0
@@ -40,6 +41,7 @@ O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O emissor então r
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0
