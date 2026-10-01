@@ -20,6 +20,7 @@ Se o quadro 2 for perdido, o receptor não dispõe do quadro esperado para conti
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0

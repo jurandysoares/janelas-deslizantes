@@ -66,6 +66,7 @@ No **Stop-and-Wait**, o emissor transmite uma unidade de dados e aguarda sua con
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0
@@ -84,6 +85,7 @@ Se um quadro for perdido, o emissor precisa de um mecanismo para detectar que a 
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E -x R: Quadro 0
@@ -99,6 +101,7 @@ O quadro pode chegar ao receptor, mas o ACK pode ser perdido. O emissor então r
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0
@@ -124,6 +127,7 @@ O número de sequência permite identificar a unidade e ajuda o receptor a recon
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0
@@ -177,6 +181,7 @@ Se o quadro 2 for perdido, o receptor não dispõe do quadro esperado para conti
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0
@@ -229,6 +234,7 @@ A **Repetição Seletiva** procura retransmitir somente as unidades que precisam
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0

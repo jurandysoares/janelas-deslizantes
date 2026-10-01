@@ -13,7 +13,8 @@
 # Read more: https://zensical.org/docs/setup/basics/#site_name
 site_name = "Protocolos de Janela Deslizante"
 
-repo_url = "https://github.com/jurandysoares/janelas-deslizantes/"
+repo_url = "https://github.com/jurandysoares/janelas-deslizantes"
+edit_uri = "edit/main/docs/"
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
 #
@@ -99,7 +100,6 @@ nav = [
 # change this to "classic" to use the traditional Material for MkDocs look.
 #variant = "classic"
 
-edit_uri = "edit/main/docs/"
 remote_branch = "main"
 
 # Zensical allows you to override specific blocks, partials, or whole

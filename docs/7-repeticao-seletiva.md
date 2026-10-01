@@ -20,6 +20,7 @@ A **Repetição Seletiva** procura retransmitir somente as unidades que precisam
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0

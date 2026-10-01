@@ -10,6 +10,7 @@ O número de sequência permite identificar a unidade e ajuda o receptor a recon
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0

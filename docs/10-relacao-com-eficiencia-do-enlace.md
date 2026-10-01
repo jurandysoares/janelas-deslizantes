@@ -6,6 +6,7 @@ Stop-and-Wait:
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant T as Transmissor
     participant R as Receptor
 
@@ -20,6 +21,7 @@ Janela deslizante:
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant T as Transmissor
     participant R as Receptor
 
