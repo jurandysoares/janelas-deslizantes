@@ -100,6 +100,7 @@ nav = [
 #variant = "classic"
 
 edit_uri = "edit/main/docs/"
+remote_branch = "main"
 
 # Zensical allows you to override specific blocks, partials, or whole
 # templates as well as to define your own templates. To do this, uncomment
