@@ -6,6 +6,7 @@ No **Stop-and-Wait**, o emissor transmite uma unidade de dados e aguarda sua con
 
 ```mermaid
 sequenceDiagram
+    autonumber
     participant E as Emissor
     participant R as Receptor
     E->>R: Quadro 0
