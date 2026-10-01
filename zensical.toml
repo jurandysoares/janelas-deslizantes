@@ -99,6 +99,8 @@ nav = [
 # change this to "classic" to use the traditional Material for MkDocs look.
 #variant = "classic"
 
+edit_uri = "edit/main/docs/"
+
 # Zensical allows you to override specific blocks, partials, or whole
 # templates as well as to define your own templates. To do this, uncomment
 # the custom_dir setting below and set it to a directory in which you
